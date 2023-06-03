@@ -1,0 +1,348 @@
+/* ----------------------------------ОБНУЛЕНИЕ СТИЛЕЙ ---------------------------------- */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+/* *,
+  *:before,
+  *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  } */
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  /* height: 100%; */
+  /* влияет на размер окна - если и не входит переносит */
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 18px; /* указал который нужен для транслита */
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/* ----------------------------------ОБНУЛЕНИЕ СТИЛЕЙ ---------------------------------- */
+
+/* .App-header {
+  background-color: #a7c8b494;
+  font-size: calc(10px + 2vmin);
+  align-items: center;
+  display: grid;
+}
+.App-header div {
+  padding: 15px;
+}
+.nav {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+  justify-content: space-evenly;
+  align-items: center;
+  /* position: absolute;
+  z-index: 1; 
+}
+.nav > div {
+  padding: 2vw;
+} */
+/* ----------------------------------------------Сделать переменные с р-р текста и цветами ---------------------------------- */
+
+.App-body {
+  position: relative;
+  top: 76px;
+  min-height: 60vh;
+  /* font-size: calc(10px + 2vmin); */
+
+  font-size: 34px;
+}
+.desktop-header {
+  background-color: #a7c8b4;
+  height: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  height: 76px;
+}
+.desktop-header div {
+  margin: 0 20px;
+}
+.desktop-header__left {
+  text-align: left;
+}
+.desktop-header__center {
+  text-align: center;
+  font-size: 34px;
+  font-style: italic;
+}
+.desktop-header__right {
+  text-align: right;
+}
+
+/* ----------------------------------------------------- Изменение основных тэги ----------------------------------------------------- */
+
+h1,
+h6 {
+  font-weight: 500;
+  text-align: left;
+  padding: 10px 0 10px;
+}
+p {
+  text-align: left;
+  padding: 10px 0 10px;
+}
+span {
+  text-align: left;
+  padding: 10px 0 10px;
+}
+/* ----------------------------------------------------- ПИЦЦА ----------------------------------------------------- */
+/* ----------------------------------------------------- Списки чего-либо ----------------------------------------------------- */
+
+/* .list {
+  padding-right: 20px;
+} */
+/* .title {
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+} */
+.list__title {
+  top: 75px;
+  position: sticky;
+  display: grid;
+  grid-template-rows: max-content max-content;
+  grid-gap: 10px;
+  gap: 10px;
+  align-items: baseline;
+  width: 100%;
+  max-width: 1024px;
+  margin: 28px auto 12px;
+  background-color: white;
+  z-index: 100;
+}
+.list__item {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-gap: 20px;
+  gap: 20px;
+  align-items: stretch;
+  max-width: 1024px;
+  margin: 0 auto 50px;
+}
+
+.element {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  font-size: 17px;
+  width: min-content;
+}
+.element p {
+  font-size: 14px;
+  border-top: solid 0.3px #9ba5ab;
+  color: #9ba5ab;
+  opacity: 0.7;
+}
+.element img {
+  border-radius: 5px;
+  width: 320px;
+  height: 214px;
+  /* position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 351/235;
+  transition: opacity 0.2s ease; */
+}
+/* .element__title {
+  display: grid;
+  grid-template-areas: 1fr 3fr;
+} */
+/* ----------------------------------------------------- GRID AREAS ----------------------------------------------------- */
+
+.element__title {
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    'name  price but'
+    'massa price but';
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 6fr 2fr 1fr;
+}
+
+.element__title > .name {
+  grid-area: name;
+
+  /* background-color: #8ca0ff; */
+}
+
+.element__title > .massa {
+  grid-area: massa;
+  font-size: 13px;
+  color: #9ba5ab;
+
+  /* background-color: #ffa08c; */
+}
+
+.element__title > .price {
+  grid-area: price;
+  /* background-color: #ffff64; */
+}
+.element__title > .but {
+  grid-area: but;
+  /* background-color: #ffff64; */
+}
+/* ----------------------------------------------------- LIST area ----------------------------------------------------- */
+
+.list {
+  display: grid;
+  /* justify-items: center; */
+  grid-template-areas:
+    'head head head'
+    'menu contaner basket';
+  grid-template-rows: 1fr;
+  grid-template-columns: 240px 1fr 320px;
+}
+
+.list > .desktop-header {
+  grid-area: head;
+  z-index: 101;
+  /* background-color: #8ca0ff; */
+}
+
+.list > .menu-prod {
+  grid-area: menu;
+  font-size: 13px;
+  color: #a1b5c0;
+  background-color: #4e585d;
+}
+.list > .menu-prod p {
+  cursor: pointer;
+}
+
+.list > .basket {
+  grid-area: basket;
+  /* align-items: flex-end; */
+  /* height: 100vh; И КАК ЭТО РАБОТАЕТ??? ВЫСОТА ПО ОБЬЕКТУ СТОЛИ */
+
+  background-color: #325850;
+}
+.list > .contaner-list {
+  grid-area: contaner;
+  /* background-color: #ffff64; */
+}
+
+/* ----------------------------------------------------- MENU ----------------------------------------------------- */
+
+/* ----------------------------------------------идет пересечение с LIST pizza))  ----------------------------------------------------- */
+/* хз ка это выворачивать */
+.menu {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 13px; */
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-gap: 20px;
+  gap: 20px;
+  align-items: stretch;
+  max-width: 1024px;
+  margin: 0 auto 50px;
+}
+.menu img {
+  border-radius: 5px;
+  width: 320px;
+  height: 214px;
+}
+.menu__item p {
+  position: absolute;
+  left: 10px;
+  top: 170px;
+  color: white;
+  background-color: #396882ad;
+}
+.menu__item {
+  position: relative;
+  padding: 13px 0;
+}
+/* ----------------------------------------------------- Боковое меню ----------------------------------------------------- */
+
+.menu__item-nav {
+  /* position: absolute; */
+}
+/* ----------------------------------------------------- BUTTON ----------------------------------------------------- */
+
+button {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background-color: #a7c8b4;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0 12px;
+  font-weight: 500;
+  font-size: 27px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+button:hover {
+  background-color: #4f936a;
+}
+
+/* ----------------------------------------------------- MEDIA ----------------------------------------------------- */
