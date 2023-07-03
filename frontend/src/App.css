@@ -163,26 +163,31 @@ span {
   grid-template-rows: 2fr 2fr;
 } */
 .list__title {
-  top: 75px;
-  position: sticky;
+  top: 76px;
+
+  position: fixed;
   display: grid;
   grid-template-rows: max-content max-content;
   grid-gap: 10px;
   gap: 10px;
   align-items: baseline;
   width: 100%;
-  max-width: 1024px;
-  margin: 28px auto 12px;
+  max-width: 780px;
+  margin: 0 0 0 -3px;
   background-color: white;
   z-index: 100;
 }
 .list__item {
+  position: relative;
+  top: 200px;
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
   grid-gap: 20px;
   gap: 20px;
   align-items: stretch;
   max-width: 1024px;
+  min-width: 775px;
+  padding-left: 15px;
   margin: 0 auto 50px;
 }
 
@@ -191,7 +196,10 @@ span {
   flex-wrap: wrap;
   align-content: flex-start;
   font-size: 17px;
-  width: min-content;
+  /* width: min-content; */
+  max-width: 320px;
+
+  /* aspect-ratio: 351/235; */
 }
 .element p {
   font-size: 14px;
@@ -201,14 +209,24 @@ span {
 }
 .element img {
   border-radius: 5px;
+  width: 100%;
+
+  aspect-ratio: 351/235;
+
+  /* transition: opacity 0.2s ease; */
+}
+.page img {
+  width: 800px;
+}
+.dish {
+  position: relative;
+  top: 150px;
+  left: 300px;
+}
+/* img {
   width: 320px;
   height: 214px;
-  /* position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 351/235;
-  transition: opacity 0.2s ease; */
-}
+} */
 /* .element__title {
   display: grid;
   grid-template-areas: 1fr 3fr;
@@ -257,34 +275,79 @@ span {
     'menu contaner basket';
   grid-template-rows: 1fr;
   grid-template-columns: 240px 1fr 320px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .list > .desktop-header {
   grid-area: head;
-  z-index: 101;
+  /* z-index: 101; */
   /* background-color: #8ca0ff; */
 }
 
-.list > .menu-prod {
+.list .menu-prod {
   grid-area: menu;
   font-size: 13px;
   color: #a1b5c0;
   background-color: #4e585d;
+  /* position: sticky; */
 }
 .list > .menu-prod p {
   cursor: pointer;
 }
+.menu-prod {
+  grid-area: menu;
+  font-size: 13px;
+  color: #a1b5c0;
+  background-color: #4e585d;
+  --side-indent: 26px;
+  position: fixed;
+  width: 240px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+}
 
+.menu-prod__items {
+  width: 240px;
+  height: calc(100vh - 76px);
+  padding: 16px 12px 16px 28px;
+  overflow-y: auto;
+  background-color: var(--bg-color-concept);
+  border-top: 1px solid hsla(0, 0%, 100%, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-color-dark-2) transparent;
+  scrollbar-gutter: stable;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none;
+}
 .list > .basket {
   grid-area: basket;
+  position: fixed;
+  top: 76px;
+  right: 0;
+  top: 0;
+  z-index: 101;
+
+  height: -webkit-fill-available;
+  width: 320px;
+
   /* align-items: flex-end; */
   /* height: 100vh; И КАК ЭТО РАБОТАЕТ??? ВЫСОТА ПО ОБЬЕКТУ СТОЛИ */
 
   background-color: #325850;
 }
-.list > .contaner-list {
+.list > .list__contaner {
   grid-area: contaner;
-  /* background-color: #ffff64; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* ----------------------------------------------не удалось margin вставить в границы страницы  ----------------------------------------------------- */
+  /* ----------------------------------------------отталкивает menu и basket ----------------------------------------------------- */
+
+  /* margin: 76px 360px 0 240px; */
 }
 
 /* ----------------------------------------------------- MENU ----------------------------------------------------- */
@@ -301,12 +364,13 @@ span {
   gap: 20px;
   align-items: stretch;
   max-width: 1024px;
-  margin: 0 auto 50px;
+  margin: 76px auto 50px;
 }
 .menu img {
   border-radius: 5px;
   width: 320px;
   height: 214px;
+  cursor: grab;
 }
 .menu__item p {
   position: absolute;
@@ -344,5 +408,60 @@ button {
 button:hover {
   background-color: #4f936a;
 }
+.menu-prod button {
+  width: 240px;
+  min-width: 142px;
+  padding-right: 29px;
+  padding-left: 29px;
+  background-color: var(--bg-color-concept);
+  cursor: pointer;
+  height: 76px;
+  align-items: center;
+}
 
+* {
+  box-sizing: border-box;
+}
 /* ----------------------------------------------------- MEDIA ----------------------------------------------------- */
+/* дб 1440 1280 1024 */
+/* @media (max-width: 1570px) {
+  .list__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    gap: 20px;
+    align-items: stretch;
+  }
+  .list__title {
+    max-width: 660px;
+  }
+} */
+
+.ad {
+  position: relative;
+  top: 200px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-gap: 20px;
+  gap: 20px;
+  align-items: stretch;
+  max-width: 1024px;
+  min-width: 775px;
+  max-height: 100vh;
+  padding-left: 15px;
+  margin: 0 auto 50px;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  position: absolute;
+  padding: 20px;
+}
+.form input {
+  border: 2px solid black;
+}
+.form button {
+  width: 70px;
+  font-size: 13px;
+}

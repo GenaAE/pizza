@@ -6,7 +6,9 @@ function Header(): JSX.Element {
     <>
       {/* <div className="desktop"> */}
       <div className="desktop-header">
-        <div className="desktop-header__left">Меню</div>
+        <NavLink to="/catalog">
+          <div className="desktop-header__left">Меню</div>
+        </NavLink>
         <NavLink to="/">
           <div className="desktop-header__center">ПОТАПЫЧ </div>
         </NavLink>

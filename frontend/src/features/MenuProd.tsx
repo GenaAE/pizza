@@ -1,56 +1,23 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import { RootState } from '../store';
 // МЕНЮ
 // сделать переход на пиццу
 // отрисовать компонент пицца с 10 элементами
 //
 
-const menuArr = [
-  {
-    name: 'Пицца',
-    img: 'https://static.yamiyami.ru/assets/images/resize/product/desktop/preview/66343735-6337-4636-b338-376164616464.webp',
-    path: '/pizza',
-  },
-  {
-    name: 'Японская кухня',
-    img: 'https://img.myslo.ru/NewsImage/76/e7/76e75796-19d1-4a6f-bb8d-ba68d9596981_3.jpg',
-    path: '/',
-  },
-  {
-    name: 'Шаверма',
-    img: 'https://vkus-eda-dostavka.ru/static/images/05b72d3252cdb4653ece78555e7cb04d-600x450.jpeg',
-    path: '/pizza',
-  },
-  {
-    name: 'Салаты',
-    img: 'https://zira.uz/wp-content/uploads/2018/07/italyanskiy-salat-2.jpg',
-    path: '/pizza',
-  },
-  {
-    name: 'Первое блюдо',
-    img: 'https://shuba.life/static/content/thumbs/740x493/9/f4/drkpup---c740x493x50px50p-c740x493x50px50p-up--83eb4f9d484e425726fa959b5a7baf49.jpg',
-    path: '/pizza',
-  },
-  {
-    name: 'Горячие блюда',
-    img: 'https://hip2go.ru/api2/images/IikoProducts26/c1c668e7c6-1_500x353.jpg',
-    path: '/pizza',
-  },
-  {
-    name: 'Паста и ризотто',
-    img: 'https://fishbox-rest.ru/wp-content/uploads/2022/01/pasta-and-risotto-400x267.jpg',
-    path: '/pizza',
-  },
-  {
-    name: 'Вареники',
-    img: 'https://img.delo-vcusa.ru/2012/10/DSC_0798_1.jpg',
-    path: '/pizza',
-  },
-];
 function MenuProd(): JSX.Element {
   const navigate = useNavigate();
-  const { pizza } = useParams();
-  console.log(pizza);
+
+  const products = useSelector((store: RootState) => store.products.products);
+  console.log(products);
+  // ПРОБЛЕМКА === ОТРИСОВЫВАЕТ КАТЕГОРИИ КОТ НЕ ДБ))
+  // ДЕЛАТЬ ВСПЛЫВАЮЩИЕ ОКНА ИЛИ ОСТВАТЬ ТАК НА ОТВЕТ-ТЬ ВВОДЯЩИХ
+  const cat = Array.from(new Set(products.map((el) => el.product_category)));
+  const catPath = Array.from(new Set(products.map((el) => el.path)));
+  console.log(catPath);
+
   return (
     <>
       {/* <div className="menu">
@@ -66,16 +33,64 @@ function MenuProd(): JSX.Element {
 
       {/* ПОДУМАТЬ КАК ОРЕНДЕРИТЬ ЧЕРЕЗ УСЛ РЕНДЕР */}
       <div className="menu-prod">
-        {menuArr.map((dish) => (
+        <button>MENU</button>
+        <div className="menu-prod__items">
           <>
             <div className="menu-prod__item-nav">
-              <p onClick={() => navigate(dish.path)}>{dish.name}</p>
+              <>
+                {/* {products.map((dish) => (
+                  <p onClick={() => navigate(`.${dish.path}`)}>
+                    {dish.product_category}
+                  </p>
+                ))} */}
+                {cat.map((el, i) => (
+                  <p onClick={() => navigate(`/catalog${catPath[i]}`)}>{el}</p>
+                ))}
+              </>
+
+              {/* <p onClick={() => navigate(dish.path)}>{dish.product_category}</p> */}
             </div>
           </>
-        ))}
+        </div>
       </div>
     </>
   );
 }
 
 export default MenuProd;
+
+// ----------------------------------- Алгоритмы sheme -------------------------//
+// const t = [];
+// const w = [];
+
+// for (let i = 0; i < products.length; i++) {
+//   for (let r = 1; r < products.length; r++) {
+//     if (products[i].path !== products[r].path) {
+//       // console.log(products[i].path);
+//       // console.log(products[r].path);
+//       i = r;
+//     }
+//     t.push(products[r]);
+//     // if (products[i].id === last[0].id) console.log('first');
+//     // t.push(products[i]);
+//   }
+// }
+// console.log(t);
+// for (let i = 0; i < products.length; i++) {
+// if (products[i].path !== products[i + 1].path) {
+// console.log(products[i].path);
+// console.log(products[r].path);
+
+// t.push(products[i].product_category);
+// }
+
+// if (products[i].id === last[0].id) console.log('first');
+// t.push(products[i]);
+// }
+// const arrMapDish =
+// products.map((dish) => {
+//   const cat = Array.from(
+//     new Set(products.map((el) => el.product_category))
+//   );
+//   console.log(cat);
+// });
