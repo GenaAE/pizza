@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppDispatch } from '../../store';
+import { useAppDispatch } from '../../store/store';
 import { addProduct } from './adminSlice';
 
 function AddForm(): JSX.Element {

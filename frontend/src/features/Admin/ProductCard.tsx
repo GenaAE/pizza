@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppDispatch } from '../../store';
+import { useAppDispatch } from '../../store/store';
 import { deleteProduct } from './adminSlice';
 import { AdminType } from './types/AdminType';
 

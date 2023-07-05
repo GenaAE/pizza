@@ -1,20 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { RootState } from '../../store';
+import { RootState, useAppDispatch } from '../../store/store';
 import Header from '../Header';
 import MenuProd from '../MenuProd';
-import { Product } from './types/ProductType';
+import { plusDish } from './productSlice';
 
 function DishPage(): JSX.Element {
-  const navigate = useNavigate();
   const { id } = useParams();
-  console.log(id);
+  const dispatch = useAppDispatch();
+
   const arrDish = useSelector((store: RootState) => store.products.products);
-  console.log(arrDish);
 
   const dish = arrDish.find((dish) => dish.id === Number(id));
-  console.log(dish);
+
   return (
     <>
       {dish && (
@@ -28,7 +27,13 @@ function DishPage(): JSX.Element {
                 <span className="product_name">{dish.product_name}</span>
                 <span className="weight">{dish.weight} гр.</span>
                 <div className="price">{dish.price} ₽</div>
-                <button className="but">+</button>
+                <button
+                  className="but"
+                  type="button"
+                  onClick={() => dispatch(plusDish(dish.price))}
+                >
+                  +
+                </button>
               </div>
 
               <div>

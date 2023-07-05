@@ -5,21 +5,14 @@ import './App.css';
 import Home from './Home';
 import Layout from './Layout';
 import DishList from './features/Catalog/DishList';
-import Section from './features/Catalog/DishCard';
 import DishPage from './features/Catalog/DishPage';
-import CatalogHome from './features/Catalog/CatalogHome';
-import Proba from './features/Catalog/Proba';
-import { useDispatch } from 'react-redux';
 import { getProducts } from './features/Catalog/productSlice';
-import { useAppDispatch } from './store';
+import { useAppDispatch } from './store/store';
 import AdminWork from './features/Admin/AdminWork';
-import {
-  addProduct,
-  deleteProduct,
-  getProductsAdmin,
-} from './features/Admin/adminSlice';
+import { getProductsAdmin } from './features/Admin/adminSlice';
 import PelmeniList from './features/Catalog/Pelmeni/PelmeniList';
 import { getPelmeni } from './features/Catalog/Pelmeni/pelmeniSlice';
+import CatalogDish from './features/Catalog/CatalogDish';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -27,9 +20,6 @@ function App(): JSX.Element {
     dispatch(getProducts());
     dispatch(getProductsAdmin());
     dispatch(getPelmeni());
-
-    // dispatch(deleteProduct());
-    // dispatch(Product());
   }, [dispatch]);
   return (
     <>
@@ -38,12 +28,11 @@ function App(): JSX.Element {
           <Route path="/" element={<Home />} />
 
           <Route path="/pelmeni" element={<PelmeniList />} />
+
           <Route path="/admin" element={<AdminWork />} />
-          <Route path="/catalog/" element={<CatalogHome />} />
+          <Route path="/catalog/" element={<CatalogDish />} />
           <Route path="/catalog/:path" element={<DishList />} />
           <Route path="/catalog/:path/:id" element={<DishPage />} />
-          <Route path="/proba" element={<Proba />} />
-          {/* <Route path="/products" element={<CatalogListSections />} /> */}
         </Route>
       </Routes>
     </>

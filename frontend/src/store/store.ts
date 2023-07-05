@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import adminSlice from './features/Admin/adminSlice';
-import pelmeniSlice from './features/Catalog/Pelmeni/pelmeniSlice';
-import productSlice from './features/Catalog/productSlice';
+import adminSlice from '../features/Admin/adminSlice';
+import pelmeniSlice from '../features/Catalog/Pelmeni/pelmeniSlice';
+import productSlice from '../features/Catalog/productSlice';
 
 const store = configureStore({
   reducer: {

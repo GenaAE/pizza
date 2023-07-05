@@ -12,7 +12,7 @@ const initialState: PelmeniState = {
 
 export const getPelmeni = createAsyncThunk('pelmeni/getPelmeni', async () => {
   const allPelmeni = await apiPelmeni.getPelmeni();
-  console.log(allPelmeni);
+
   return allPelmeni;
 });
 

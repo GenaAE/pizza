@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../../../store';
+import { useAppDispatch } from '../../../store/store';
 import { deletePelmen } from './pelmeniSlice';
 import { PelmeniType } from './types/PelmeniType';
 

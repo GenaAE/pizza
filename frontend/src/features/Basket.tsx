@@ -1,13 +1,21 @@
 import React from 'react';
-import { Product } from './Catalog/types/ProductType';
+import { useSelector } from 'react-redux';
+import { selectedDish } from '../store/product/selectors';
 
-function Basket({ name }: { name: string }): JSX.Element {
-  // const menuProd_Nav = Array.from(new Set(name));
-
+function Basket(): JSX.Element {
+  const seldDish = useSelector(selectedDish);
   return (
     <>
-      <p>{name}</p>
-      <div className="basket">Basket</div>;
+      <div className="basket">
+        {seldDish.map((dish) => (
+          <>
+            <img src={dish.image} style={{ width: '100px' }} />
+            <div>{dish.product_name}</div>
+            <div>{dish.price}</div>
+          </>
+        ))}
+      </div>
+      ;
     </>
   );
 }

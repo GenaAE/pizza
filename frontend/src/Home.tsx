@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './features/Header';
 
 import CatalogHome from './features/Catalog/CatalogHome';
-import Basket from './features/Basket';
 
 function Home(): JSX.Element {
   return (
