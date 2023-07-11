@@ -5,6 +5,11 @@ export type Product = {
   product_name: string;
   composition: string;
   image: string;
-  price: number | string;
+  price: number;
   weight: number | string;
+  count: number; // удалить с базы
+  score: number; // удалить с базы
+  forBasket: number; // удалить с базы
+  onlyValuesOfDishues: number | unknown;
+  children?: JSX.Element | JSX.Element[];
 };

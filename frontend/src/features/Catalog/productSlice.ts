@@ -6,8 +6,10 @@ import * as productsApi from './api';
 const initialState: State = {
   products: [],
   error: undefined,
-  check: 0,
+  check: 0, // счет для заказа в Хедере
   basketDish: [],
+  // score: 0, попытка сделать счетчик -
+  //не учел что счетчик считает все блюда а не поотдельности
 };
 
 export const getProducts = createAsyncThunk(
@@ -23,25 +25,30 @@ const productSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    //сдесь проделать опэрации подсчета и внесения в заказ позиций
-    // получение позиции заказа
-    // получение суммы заказа
-    // удаление из суммы заказа
-    //
-    // plusCheck: (state, action) => {
-    //   state.check = +state.check + +action.payload;
-    // },
+    // добавляю сумму и само блюдо
     plusDish: (state, action) => {
       state.check = +state.check + +action.payload.price;
       state.basketDish = [...state.basketDish, action.payload];
+      // state.score = +state.score + +action.payload.forBasket;
     },
-    //
-    // getTodos: (state) => state,
-    // removeTodo: (state, action) => {
-    //   state.todos = state.todos.filter((todo) => todo.id !== action.payload);
-    // },
-    // addTodo: (state, action) => {
-    //   state.todos.push(action.payload);
+    //убавляю сумму - блюдо надо изменить кол-во в массиве
+    minusDish: (state, action) => {
+      state.basketDish = state.basketDish.filter(
+        (el) => el.id !== action.payload.id
+      );
+      // state.basketDish = state.basketDish.map((el) =>
+      // if (el.onlyValuesOfDishues === action.payload.onlyValuesOfDishues) {
+      // el.onlyValuesOfDishues = Number(el.onlyValuesOfDishues) - 1
+      // }
+      // );
+      // (el) => [...el, el.onlyValuesOfDishues: el.onlyValuesOfDishues - action.payload.forBasket]
+      // {...el, el.onlyValuesOfDishues}
+      // );
+      // state.check = +state.check - +action.payload.price;
+      // state.basketDish = state.basketDish === action.payload.id;
+    },
+    // scorePlus: (state, action) => {
+    //   state.score = +state.score + +action.payload;
     // },
   },
   extraReducers: (builder) => {
@@ -55,5 +62,5 @@ const productSlice = createSlice({
   },
 });
 
-export const { plusDish } = productSlice.actions;
+export const { plusDish, minusDish } = productSlice.actions;
 export default productSlice.reducer;

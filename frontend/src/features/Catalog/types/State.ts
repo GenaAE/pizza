@@ -4,6 +4,7 @@ type State = {
   products: [] | Product[];
   error: undefined | string;
   check: number | string;
+  // score: number | string;
   basketDish: [] | Product[];
 };
 

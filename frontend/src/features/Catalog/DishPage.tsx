@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store/store';
 import Header from '../Header';
 import MenuProd from '../MenuProd';

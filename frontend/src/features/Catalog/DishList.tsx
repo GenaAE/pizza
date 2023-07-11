@@ -10,22 +10,14 @@ import DishCard from './DishCard';
 
 function CatalogListSections(): JSX.Element {
   const products = useSelector((store: RootState) => store.products.products);
+  console.log(products);
 
-  // ------------------------------ фильтр для отрисовки тольок одно вида блюд  // ------------------------------
+  // ------------------------------ фильтр для отрисовки только одно КАТЕГОРИИ БЛЮД  // ------------------------------
   const params = useParams();
+  const dishList = products.filter((el) => el.path === `/${params.path}`);
 
-  const dishList = products.filter((el) => el.path === `/${params.path}`); // сравнение упорото только из-за БД и как там прописано
-
-  // ------------------------------ для отрисовки МЕНЮ_НАВ и внесения списка категорий + пути
-
-  // const cat = Array.from(
-  //   new Set(products.map((el) => el.product_category + ' ' + el.path))
-  // );
-
-  // ------------------------------ для отрисовки МЕНЮ_НАВ и внесения списка категорий + пути
   return (
     <>
-      {/* ХЗ как сделать отрисовку всех комп в одной коробке?? */}
       <div className="list">
         <Header />
         <MenuProd />
@@ -33,9 +25,8 @@ function CatalogListSections(): JSX.Element {
         <div className="list__contaner">
           <div className="list__item">
             <div className="list__title">
-              {/* <h1>{menuProduct_List?.product_category}</h1> */}
               <p>
-                СЛОГАН ДЛЯ КАЖДОЙ КАТЕГОРИИ = Вкуснейшая пицца, которую можно
+                СЛОГАН ДЛЯ КАЖДОЙ КАТЕГОРИИ = Вкуснейшее блюдо, которое можно
                 купить за деньги на земле!
               </p>
             </div>
@@ -48,7 +39,12 @@ function CatalogListSections(): JSX.Element {
         </div>
         <div
           className="basket"
-          style={{ position: 'fixed', top: '100px', right: '10px' }}
+          style={{
+            position: 'fixed',
+            top: '75px',
+            right: '0px',
+            background: '#f3feff',
+          }}
         >
           <Basket />
         </div>

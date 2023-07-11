@@ -37,6 +37,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      onlyValuesOfDishues: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      forBasket: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
     },
     {
       sequelize,

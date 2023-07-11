@@ -1,26 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { useNavigate, useParams } from 'react-router-dom';
-import { RootState } from '../../store/store';
-import getCatagoty from '../../utils/getCatagoty';
+import { useNavigate } from 'react-router-dom';
+
+import CatagoryList from '../../utils/CatagoryList';
 import Header from '../Header';
 //
 function CatalogDish(): JSX.Element {
   const navigate = useNavigate();
 
-  //------------------------------------------ ПРОБА:
-  // 1. Беру из БД все продукты отсорторованные по order  и отрисовываю их
-  // 2. Исп-ю категорию в названии и первое фото из категории // исходя из 1 не нужно
-
-  // 3. Исп-ю функцию
-  //      - или для создания нового массива с нужными парамерами(название, путь, фото)
-  //      - или для перевода названия категории в имя пути === следовательно из базы можно убрать столбец PATH
-  // 4.
   return (
     <>
       <Header />
       <div className="menu">
-        {getCatagoty().map((dish) => (
+        {CatagoryList().map((dish) => (
           <>
             <div className="menu__item" key={dish.id}>
               <img
@@ -33,17 +25,6 @@ function CatalogDish(): JSX.Element {
           </>
         ))}
       </div>
-
-      {/* ПОДУМАТЬ КАК ОРЕНДЕРИТЬ ЧЕРЕЗ УСЛ РЕНДЕР */}
-      {/* <aside>
-        {menuArr.map((dish) => (
-          <>
-            <div className="menu__item-nav">
-              <p>{dish.name}</p>
-            </div>
-          </>
-        ))}
-      </aside> */}
     </>
   );
 }

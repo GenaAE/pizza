@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import { selectedDish } from '../store/product/selectors';
 import { RootState } from '../store/store';
 // МЕНЮ
 // сделать переход на пиццу
@@ -36,6 +37,9 @@ function MenuProd(): JSX.Element {
                 {cat.map((el, i) => (
                   <p onClick={() => navigate(`/catalog${catPath[i]}`)}>{el}</p>
                 ))}
+                {/* {selectDish.map((el) => (
+                  <p onClick={() => navigate(`/catalog${el.path}`)}>{el}</p>
+                ))} */}
               </>
 
               {/* <p onClick={() => navigate(dish.path)}>{dish.product_category}</p> */}

@@ -16,24 +16,19 @@ function DishCard({ p }: { p: Product }): JSX.Element {
           <span className="product_name">{p.product_name}</span>
           <span className="weight">{p.weight} гр.</span>
           <div className="price">{p.price} ₽</div>
-          {/* СДелать еще диспач для внесения карточки продукта в корзину */}
-          <button
-            className="but"
-            type="button"
-            //-------------------------- как обойти расчет через состояние?
-            // onClick={() => dispatch(plusCheck(p.price) )}
-            //-------------------------- получаю блюдо и добавляю к состоянию
-            onClick={() => dispatch(plusDish(p))}
-          >
-            +
-          </button>
+          <div>
+            <button
+              className="but"
+              type="button"
+              onClick={() => dispatch(plusDish(p))}
+            >
+              +
+            </button>
+          </div>
         </div>
         <div>
           <p>{p.composition}</p>
         </div>
-        {/* // сделать условие нажатия на кнопку заказ + //при котором изм состояние
-        на назнавание и отображение в заказе //или сделать отдельную комп для
-        отрисовки в заказе */}
       </div>
     </>
   );

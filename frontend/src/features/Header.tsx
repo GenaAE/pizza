@@ -5,7 +5,7 @@ import { RootState } from '../store/store';
 
 function Header(): JSX.Element {
   const check = useSelector((store: RootState) => store.products.check);
-  console.log(check);
+
   return (
     <>
       {/* <div className="desktop"> */}

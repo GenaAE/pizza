@@ -337,7 +337,7 @@ span {
   /* align-items: flex-end; */
   /* height: 100vh; И КАК ЭТО РАБОТАЕТ??? ВЫСОТА ПО ОБЬЕКТУ СТОЛИ */
 
-  background-color: #325850;
+  background-color: #78aa9f;
 }
 .list > .list__contaner {
   grid-area: contaner;
