@@ -1,0 +1,54 @@
+.element__title {
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    'name  price but'
+    'massa price but';
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 6fr 2fr 1fr;
+}
+
+.element__title > .name {
+  grid-area: name;
+
+  /* background-color: #8ca0ff; */
+}
+
+.element__title > .massa {
+  grid-area: massa;
+  font-size: 13px;
+  color: #9ba5ab;
+
+  /* background-color: #ffa08c; */
+}
+
+.element__title > .price {
+  grid-area: price;
+  /* background-color: #ffff64; */
+}
+.element__title > .but {
+  grid-area: but;
+  /* background-color: #ffff64; */
+}
+
+.page {
+  left: 29vw;
+  position: relative;
+  top: 20vh;
+  width: 50%;
+}
+.element {
+  background-color: rgb(186, 177, 177);
+}
+.img {
+  width: 100%;
+}
+.but {
+  right: -30px;
+}
+// .dish {
+//   left: 29vw;
+//   position: relative;
+//   top: 20vh;
+//   width: 50%;
+// }

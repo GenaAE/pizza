@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { selectedDish } from '../store/product/selectors';
-import { RootState } from '../store/store';
+import { selectedDish } from '../../store/product/selectors';
+import { RootState } from '../../store/store';
 // МЕНЮ
 // сделать переход на пиццу
 // отрисовать компонент пицца с 10 элементами
@@ -19,6 +19,8 @@ function MenuProd(): JSX.Element {
   // ДЕЛАТЬ ВСПЛЫВАЮЩИЕ ОКНА ИЛИ ОСТВАТЬ ТАК НА ОТВЕТ-ТЬ ВВОДЯЩИХ
   const cat = Array.from(new Set(products.map((el) => el.product_category)));
   const catPath = Array.from(new Set(products.map((el) => el.path)));
+
+  console.log('мемоизировал компонент');
 
   return (
     <>
@@ -51,7 +53,7 @@ function MenuProd(): JSX.Element {
   );
 }
 
-export default MenuProd;
+export default React.memo(MenuProd);
 
 // ----------------------------------- Алгоритмы sheme -------------------------//
 // const t = [];

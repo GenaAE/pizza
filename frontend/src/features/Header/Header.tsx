@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { RootState } from '../store/store';
+import { RootState } from '../../store/store';
 
 function Header(): JSX.Element {
   const check = useSelector((store: RootState) => store.products.check);

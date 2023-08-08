@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './features/Header';
+import Header from './features/Header/Header';
 
 import CatalogHome from './features/Catalog/CatalogHome';
 

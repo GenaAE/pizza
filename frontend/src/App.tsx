@@ -4,15 +4,15 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './Home';
 import Layout from './Layout';
-import DishList from './features/Catalog/DishList';
-import DishPage from './features/Catalog/DishPage';
+import DishList from './features/Catalog/DishList/DishList';
+import DishPage from './features/Catalog/DishList/DishPage/DishPage';
 import { getProducts } from './features/Catalog/productSlice';
 import { useAppDispatch } from './store/store';
 import AdminWork from './features/Admin/AdminWork';
 import { getProductsAdmin } from './features/Admin/adminSlice';
 import PelmeniList from './features/Catalog/Pelmeni/PelmeniList';
 import { getPelmeni } from './features/Catalog/Pelmeni/pelmeniSlice';
-import CatalogDish from './features/Catalog/CatalogDish';
+import CatalogDish from './features/Catalog/CatalogDishes/CatalogDishes';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();

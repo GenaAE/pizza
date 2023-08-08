@@ -2,29 +2,27 @@ import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import CatagoryList from '../../utils/CatagoryList';
-import Header from '../Header';
+import CatagoryList from '../../../utils/CatagoryList';
+import Basket from '../../Basket/Basket';
+import Footer from '../../Footer/Footer';
+import Header from '../../Header/Header';
+import MenuProd from '../../SideMenu/SideMenu';
+import CatalogDishesCard from './CatalogDishesCard';
 //
 function CatalogDish(): JSX.Element {
-  const navigate = useNavigate();
-
   return (
     <>
       <Header />
       <div className="menu">
         {CatagoryList().map((dish) => (
           <>
-            <div className="menu__item" key={dish.id}>
-              <img
-                src={dish.image}
-                alt="dish"
-                onClick={() => navigate(`.${dish.path}`)}
-              />
-              <p>{dish.product_category}</p>
-            </div>
+            <CatalogDishesCard key={dish.id} dish={dish} />
           </>
         ))}
       </div>
+      <MenuProd />
+      <Basket />
+      <Footer />
     </>
   );
 }
