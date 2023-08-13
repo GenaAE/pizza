@@ -1,43 +1,37 @@
 .basket {
-  //   position: fixed;
-  //   top: 155px;
-  //   right: 0px;
-  //   background: rgb(243, 254, 255);
-  // }
-
   grid-area: basket;
   position: fixed;
   top: 76px;
   right: 0;
   top: 0;
   z-index: 101;
-
   height: -webkit-fill-available;
-  // width: 320px; поччему такая ширина ???
-
-  /* align-items: flex-end; */
-  /* height: 100vh; И КАК ЭТО РАБОТАЕТ??? ВЫСОТА ПО ОБЬЕКТУ СТОЛИ */
-
-  background-color: #78aa9f; // надо сдеалть переменные по цветам
-  overflow: auto;
+  background-color: #78aa9f;
+  padding: 20px 0px 0px 30px;
 }
 .order {
   position: relative;
   text-align: center;
-  top: 30px;
-  padding: 30px;
+  // top: 30px;
+  padding-top: 15px;
 }
-// .order__buttonPlus {
-//   position: relative;
-//   left: 160px;
-// }
-// .order__buttonMinus {
-//   position: relative;
-//   left: 20px;
-// }
+
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+.scroll {
+  overflow: auto;
+  height: 83vh;
+  padding-top: 20px;
+  position: relative;
+}
+
+.check {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px 0;
+  font-weight: 700;
 }

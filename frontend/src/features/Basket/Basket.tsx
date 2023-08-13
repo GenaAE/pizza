@@ -15,7 +15,7 @@ function Basket(): JSX.Element {
 
   return (
     <>
-      <div className={styles.basket}>
+      {/* <div className={styles.basket}>
         {selectDish.length > 0 && (
           <div style={{ width: '130px', display: 'flex' }}>
             <span>Ваш заказ на сумму: {check}</span>
@@ -25,7 +25,7 @@ function Basket(): JSX.Element {
         <br />
         {selectDish.length > 0 && <div>Общая сумма заказа : {check}</div>}
         <BasketList />
-      </div>
+      </div> */}
     </>
   );
 }

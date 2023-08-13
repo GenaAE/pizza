@@ -18,7 +18,7 @@ function Header(): JSX.Element {
         </NavLink>
         <div className="desktop-header__right">
           <p>Ваш заказ</p>
-          <p>{check} руб</p>
+
           {/*  */}
         </div>
       </div>

@@ -19,8 +19,8 @@ function BasketList(): JSX.Element {
   const sortedIdSelectedArr = sortedSelectedArr.map((el) => el.id);
   //---------------------------- КОЛИЧЕСТВО каждой позиции ----------------------------
   const countOfDishId = sortedIdSelectedArr.reduce((acc, el) => {
-    acc[el] = (acc[el] || 0) + 1; // создание ключ:значение
-    return acc; // возврат всего редусера)
+    acc[el] = (acc[el] || 0) + 1;
+    return acc;
   }, {});
   //---------------------------- СУММА ЗАКАЗА ------------------------------------------
   const orderPrice = selectedArr.reduce((acc, el) => acc + el.price, 0);
@@ -29,49 +29,56 @@ function BasketList(): JSX.Element {
     <>
       <br />
 
-      <div className={styles.basket}>
-        {!!selectedArr.length && (
+      {!!selectedArr.length && (
+        <div className={styles.basket}>
           <>
-            <div style={{ width: '130px', display: 'flex' }}>
+            <div>
               <span>Ваш заказ на сумму: {orderPrice}</span>
             </div>
+            <div className={styles.scroll}>
+              {unsortUniqArrOfDishes.map((basDish) => (
+                <>
+                  <div key={basDish.id} className={styles.order}>
+                    {/* <div key={basDish.id}> */}
+                    <span>{basDish.count}</span>
+                    <img
+                      src={basDish.image}
+                      alt="foto"
+                      style={{ width: '60px' }}
+                    />
 
-            {unsortUniqArrOfDishes.map((basDish) => (
-              <>
-                <div key={basDish.id} className={styles.order}>
-                  {/* <div key={basDish.id}> */}
-                  <div>{basDish.count}</div>
-                  <img
-                    src={basDish.image}
-                    alt="foto"
-                    style={{ width: '120px' }}
-                  />
-                  <div>{basDish.product_name}</div>
-                  <div> Цена {basDish.price}</div>
-                  <div>Сумма {countOfDishId[basDish.id] * basDish.price}</div>
-                  <button
-                    className="but"
-                    type="button"
-                    onClick={() => dispatch(plusDish(basDish))}
-                  >
-                    +
-                  </button>
-                  <div>{countOfDishId[basDish.id]}</div>
-                  <button
-                    className="but"
-                    type="button"
-                    onClick={() => dispatch(minusDish(basDish))} //удаляет все
-                  >
-                    -
-                  </button>
-                </div>
-                {/* </div> */}
-              </>
-            ))}
-            <div>Сумма заказа = {orderPrice}</div>
+                    <span>{basDish.product_name}</span>
+
+                    <div> Цена {basDish.price}</div>
+
+                    <div>Сумма {countOfDishId[basDish.id] * basDish.price}</div>
+                    <button
+                      className="but"
+                      type="button"
+                      onClick={() => dispatch(plusDish(basDish))}
+                    >
+                      +
+                    </button>
+                    <div>{countOfDishId[basDish.id]}</div>
+                    <button
+                      className="but"
+                      type="button"
+                      onClick={() => dispatch(minusDish(basDish))}
+                    >
+                      -
+                    </button>
+                  </div>
+                  {/* </div> */}
+                </>
+              ))}
+            </div>
+            <div className={styles.check}>
+              <span>Всего к оплате: </span>
+              <span> {orderPrice} ₽ </span>
+            </div>
           </>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 }

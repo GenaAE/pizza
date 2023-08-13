@@ -32,7 +32,7 @@ function DishCard({ p }: { p: Product }): JSX.Element {
             +
           </button>
         </div>
-        <div>
+        <div className={styles.product_composition}>
           <p>{p.composition}</p>
         </div>
       </div>
