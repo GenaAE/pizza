@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../store/store';
-import DishCard from '../Catalog/DishCard';
+import DishCard from '../Catalog/DishList/DishCard/DishCard';
 import AddForm from './AddForm';
 import { addProduct, deleteProduct, getProductsAdmin } from './adminSlice';
 import ProductCard from './ProductCard';

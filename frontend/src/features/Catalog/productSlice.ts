@@ -6,8 +6,10 @@ import * as productsApi from './api';
 const initialState: State = {
   products: [],
   error: undefined,
-  check: 0,
   basketDish: [],
+  check: 0, // счет для заказа в Хедере
+  // score: 0, попытка сделать счетчик -
+  //не учел что счетчик считает все блюда а не поотдельности
 };
 
 export const getProducts = createAsyncThunk(
@@ -23,26 +25,46 @@ const productSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    //сдесь проделать опэрации подсчета и внесения в заказ позиций
-    // получение позиции заказа
-    // получение суммы заказа
-    // удаление из суммы заказа
-    //
-    // plusCheck: (state, action) => {
-    //   state.check = +state.check + +action.payload;
-    // },
+    // добавляю сумму и само блюдо
     plusDish: (state, action) => {
-      state.check = +state.check + +action.payload.price;
+      // простой счетчик
+      // как добавить полный счетчик
       state.basketDish = [...state.basketDish, action.payload];
+      // state.score = +state.score + +action.payload.forBasket;
+      state.check = state.basketDish
+        .map((el) => el.price)
+        .reduce((acc, el) => acc + el, 0);
+      // state.check = +state.check + action.payload.price;
     },
-    //
-    // getTodos: (state) => state,
-    // removeTodo: (state, action) => {
-    //   state.todos = state.todos.filter((todo) => todo.id !== action.payload);
-    // },
-    // addTodo: (state, action) => {
-    //   state.todos.push(action.payload);
-    // },
+
+    //непригодно
+    plusDishHead: (state, action) => {
+      state.check = +action.payload; /// работает только с одним состоняием
+    },
+    // если сделать добавление в масс через ОРДЕР и нажатие + - именно DISH целиком
+    orderSum: (state, action) => {
+      // state.check = state.basketDish
+      //   .map((el) => el.price)
+      //   .reduce((acc, el) => acc + el, 0);
+
+      state.check = state.check + action.payload.price;
+
+      // let ror = selectDish?.map((el) => el.price)?.reduce((acc, el) => acc + el, 0);
+      // console.log(ror);
+    },
+    //убавляю сумму - блюдо надо изменить кол-во в массиве
+    minusBasketSumm: (state, action) => {
+      state.check = +state.check - action.payload;
+    },
+    minusDish: (state, action) => {
+      const idSelArr = state.basketDish.map((el) => el.id);
+      //   .find((el) => el === action.payload.id);
+      const ror = idSelArr.lastIndexOf(action.payload.id);
+      console.log(ror, 'ror');
+      console.log(idSelArr, 'idSelArr');
+
+      state.basketDish.splice(ror, 1);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -55,5 +77,6 @@ const productSlice = createSlice({
   },
 });
 
-export const { plusDish } = productSlice.actions;
+export const { plusDish, minusDish, minusBasketSumm, orderSum, plusDishHead } =
+  productSlice.actions;
 export default productSlice.reducer;

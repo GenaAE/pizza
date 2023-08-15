@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      // product_name_eng: {
+      //   type: DataTypes.TEXT,
+      //   allowNull: false,
+      // },
       composition: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -37,6 +41,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      // удалить
+      onlyValuesOfDishues: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      forBasket: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      //-----------
     },
     {
       sequelize,

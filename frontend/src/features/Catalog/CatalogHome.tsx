@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import { useNavigate, useParams } from 'react-router-dom';
 import { RootState } from '../../store/store';
-import Header from '../Header';
+import Header from '../Header/Header';
 import { Product } from './types/ProductType';
-import getCatagoty from '../../utils/getCatagoty';
+import CatagoryList from '../../utils/CatagoryList';
 //
 function CatalogHome(): JSX.Element {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ function CatalogHome(): JSX.Element {
     <>
       <Header />
       <div className="menu">
-        {getCatagoty().map((dish) => (
+        {CatagoryList().map((dish) => (
           <>
             <div className="menu__item" key={dish.id}>
               <img

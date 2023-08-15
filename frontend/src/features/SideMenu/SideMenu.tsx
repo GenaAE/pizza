@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { RootState } from '../store/store';
+import { selectedDish } from '../../store/product/selectors';
+import { RootState } from '../../store/store';
+import styles from './SideMenu.module.scss';
+
 // МЕНЮ
 // сделать переход на пиццу
 // отрисовать компонент пицца с 10 элементами
@@ -19,6 +22,8 @@ function MenuProd(): JSX.Element {
   const cat = Array.from(new Set(products.map((el) => el.product_category)));
   const catPath = Array.from(new Set(products.map((el) => el.path)));
 
+  console.log('мемоизировал компонент');
+
   return (
     <>
       {/* ПОДУМАТЬ КАК ОРЕНДЕРИТЬ ЧЕРЕЗ УСЛ РЕНДЕР */}
@@ -34,8 +39,16 @@ function MenuProd(): JSX.Element {
                   </p>
                 ))} */}
                 {cat.map((el, i) => (
-                  <p onClick={() => navigate(`/catalog${catPath[i]}`)}>{el}</p>
+                  <p
+                    className={styles.sideMenu__items}
+                    onClick={() => navigate(`/catalog${catPath[i]}`)}
+                  >
+                    {el}
+                  </p>
                 ))}
+                {/* {selectDish.map((el) => (
+                  <p onClick={() => navigate(`/catalog${el.path}`)}>{el}</p>
+                ))} */}
               </>
 
               {/* <p onClick={() => navigate(dish.path)}>{dish.product_category}</p> */}
@@ -47,7 +60,7 @@ function MenuProd(): JSX.Element {
   );
 }
 
-export default MenuProd;
+export default React.memo(MenuProd);
 
 // ----------------------------------- Алгоритмы sheme -------------------------//
 // const t = [];

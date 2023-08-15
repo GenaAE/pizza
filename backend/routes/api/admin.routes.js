@@ -40,7 +40,11 @@ router.route('/').post(async (req, res) => {
   }
   //   }
 });
+
+// изменить на назв блюда по анг-ки
 router.route('/:id').delete(async (req, res) => {
+  // и вынимать натке название
+  // const { id } = req.params;
   const { id } = req.params;
 
   try {
