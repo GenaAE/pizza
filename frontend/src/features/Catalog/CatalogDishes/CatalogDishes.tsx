@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import CatagoryList from '../../../utils/CatagoryList';
-import Basket from '../../Basket/Basket';
+
 import Footer from '../../Footer/Footer';
 import Header from '../../Header/Header';
 import MenuProd from '../../SideMenu/SideMenu';
@@ -21,7 +21,7 @@ function CatalogDish(): JSX.Element {
         ))}
       </div>
       <MenuProd />
-      <Basket />
+
       <Footer />
     </>
   );

@@ -24,7 +24,8 @@ function BasketList(): JSX.Element {
   }, {});
   //---------------------------- СУММА ЗАКАЗА ------------------------------------------
   const orderPrice = selectedArr.reduce((acc, el) => acc + el.price, 0);
-
+  //
+  // СДЕЛАТЬ РАЗДЕЛЕНЕ
   return (
     <>
       <br />

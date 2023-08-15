@@ -64,29 +64,7 @@ const productSlice = createSlice({
       console.log(idSelArr, 'idSelArr');
 
       state.basketDish.splice(ror, 1);
-      // state.basketDish = state.basketDish.splice(ror, 1);
-
-      // state.basketDish = state.basketDish.filter(
-      //   (el) => el.id !== action.payload.id
-      // );
-      // state.basketDish = state.basketDish.filter(
-      //   (el) => el.id !== action.payload.id
-      // );
-
-      // state.basketDish = state.basketDish.map((el) =>
-      // if (el.onlyValuesOfDishues === action.payload.onlyValuesOfDishues) {
-      // el.onlyValuesOfDishues = Number(el.onlyValuesOfDishues) - 1
-      // }
-      // );
-      // (el) => [...el, el.onlyValuesOfDishues: el.onlyValuesOfDishues - action.payload.forBasket]
-      // {...el, el.onlyValuesOfDishues}
-      // );
-      // state.check = +state.check - +action.payload.price;
-      // state.basketDish = state.basketDish === action.payload.id;
     },
-    // scorePlus: (state, action) => {
-    //   state.score = +state.score + +action.payload;
-    // },
   },
   extraReducers: (builder) => {
     builder
