@@ -5,6 +5,7 @@ import { useAppDispatch } from '../../store/store';
 import { minusDish, plusDish } from '../Catalog/productSlice';
 import styles from './Basket.module.scss';
 import sort from '../../utils/sort';
+import { NavLink } from 'react-router-dom';
 
 function BasketList(): JSX.Element {
   const selectedArr = useSelector(selectedDish); // массив выбранных блюд
@@ -33,7 +34,7 @@ function BasketList(): JSX.Element {
       {!!selectedArr.length && (
         <div className={styles.basket}>
           <>
-            <div>
+            <div className={styles.basketHeader}>
               <span>Ваш заказ на сумму: {orderPrice}</span>
             </div>
             <div className={styles.scroll}>
@@ -41,33 +42,41 @@ function BasketList(): JSX.Element {
                 <>
                   <div key={basDish.id} className={styles.order}>
                     {/* <div key={basDish.id}> */}
-                    <span>{basDish.count}</span>
-                    <img
-                      src={basDish.image}
-                      alt="foto"
-                      style={{ width: '60px' }}
-                    />
+                    {/* <span>{basDish.count}</span> */}
+                    <div className={styles.imageBox}>
+                      <img
+                        src={basDish.image}
+                        alt="foto"
+                        // style={{ width: '60px' }}
+                      />
+                    </div>
 
-                    <span>{basDish.product_name}</span>
+                    <div className={styles.infoContainer}>
+                      <a href="http://">
+                        <span>{basDish.product_name}</span>
+                      </a>
 
-                    <div> Цена {basDish.price}</div>
-
-                    <div>Сумма {countOfDishId[basDish.id] * basDish.price}</div>
-                    <button
-                      className="but"
-                      type="button"
-                      onClick={() => dispatch(plusDish(basDish))}
-                    >
-                      +
-                    </button>
-                    <div>{countOfDishId[basDish.id]}</div>
-                    <button
-                      className="but"
-                      type="button"
-                      onClick={() => dispatch(minusDish(basDish))}
-                    >
-                      -
-                    </button>
+                      <div className={styles.amountAndBasketCountDishes}>
+                        <div className={styles.basketCountDishes}>
+                          <button
+                            className="but"
+                            type="button"
+                            onClick={() => dispatch(plusDish(basDish))}
+                          >
+                            +
+                          </button>
+                          <span>{countOfDishId[basDish.id]}</span>
+                          <button
+                            className="but"
+                            type="button"
+                            onClick={() => dispatch(minusDish(basDish))}
+                          >
+                            -
+                          </button>
+                        </div>
+                        <div>{countOfDishId[basDish.id] * basDish.price} ₽</div>
+                      </div>
+                    </div>
                   </div>
                   {/* </div> */}
                 </>
