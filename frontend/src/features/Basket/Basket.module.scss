@@ -6,27 +6,29 @@
   top: 0;
   z-index: 101;
   height: -webkit-fill-available;
-  background-color: #78aa9f;
-  padding: 20px 0px 0px 30px;
+  background-color: #ebedef;
+
+  border-left: 1px solid hsl(0deg 0.2% 17.43% / 18%);
+
+  font-size: 13px;
+  width: 360px;
+}
+.basketHeader {
+  height: 76px;
 }
 .order {
+  display: flex;
+  align-items: center;
   position: relative;
-  text-align: center;
-  // top: 30px;
-  padding-top: 15px;
+  // text-align: center;
+  padding: 15px 15px 0px 18px;
 }
 
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
 .scroll {
   overflow: auto;
   height: 83vh;
-  padding-top: 20px;
   position: relative;
+  border-top: 1px solid hsl(0deg 0.2% 17.43% / 18%);
 }
 
 .check {
@@ -35,3 +37,54 @@
   padding: 20px 10px 0;
   font-weight: 700;
 }
+.infoContainer {
+  position: relative;
+  flex-grow: 1;
+  text-align: left;
+}
+.infoContainer span {
+  display: block;
+  margin-bottom: 15px;
+}
+.basketCountDishes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: 10px;
+}
+.basketCountDishes span {
+  width: 30px;
+  text-align: center;
+  margin: 0;
+}
+.basketCountDishes button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 15px;
+}
+
+.amountAndBasketCountDishes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.imageBox {
+  display: flex;
+}
+.imageBox img {
+  width: 63px;
+  height: 63px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-right: 16px;
+  overflow: hidden;
+}
+
+//

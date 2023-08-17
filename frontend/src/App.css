@@ -108,7 +108,7 @@ h6 {
   font-size: 34px;
 }
 .desktop-header {
-  background-color: #a7c8b4;
+  /* background-color: #a7c8b4; */
   height: 10vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -119,7 +119,12 @@ h6 {
   right: 0;
   left: 0;
   z-index: 50;
-  height: 76px;
+  height: 77px;
+
+  background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 98, 0, 0.5)),
+    url('../public/picture.ico');
+
+  border-bottom: 1px solid hsl(0deg 0.2% 17.43% / 18%);
 }
 .desktop-header div {
   margin: 0 20px;
@@ -307,4 +312,8 @@ button:hover {
 .form button {
   width: 70px;
   font-size: 13px;
+}
+a {
+  text-decoration: none;
+  color: #000;
 }
