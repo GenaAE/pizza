@@ -13,6 +13,7 @@ function CatalogDishesCard({ dish }: { dish: Product }): JSX.Element {
           onClick={() => navigate(`.${dish.path}`)}
         />
         <p>{dish.product_category}</p>
+        {/* <h1>{dish.product_category}</h1> */}
       </div>
     </>
   );

@@ -1,9 +1,10 @@
 .footer {
   width: 100vw;
   height: 200px;
-  bottom: 0px;
+  // FIXME футер чтоб прилип
+  top: calc(100vh - 200px);
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: aqua;
+  background-color: #84a1a1;
 }

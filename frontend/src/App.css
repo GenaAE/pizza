@@ -33,8 +33,9 @@ body {
   /* влияет на размер окна - если и не входит переносит */
   width: 100%;
   font-size: 100%;
+  font-family: 'Times New Roman', Times, serif;
   line-height: 1;
-  font-size: 18px; /* указал который нужен для транслита */
+  font-size: 16px; /* указал который нужен для транслита */
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -107,8 +108,11 @@ h6 {
 
   font-size: 34px;
 }
+/* FIXME header */
+/* DONE прыгает высота = линия то выше то ниже = изза фона меняется цвет  */
+
 .desktop-header {
-  /* background-color: #a7c8b4; */
+  background-color: #c8e1d2;
   height: 10vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -118,11 +122,12 @@ h6 {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 50;
-  height: 77px;
+  z-index: 101;
+  /* чтобы название категории можно перекрыть чуть для ровноты) */
+  height: 76px;
 
-  background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 98, 0, 0.5)),
-    url('../public/picture.ico');
+  /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 98, 0, 0.5)),
+    url('../public/picture.ico'); */
 
   border-bottom: 1px solid hsl(0deg 0.2% 17.43% / 18%);
 }
@@ -176,16 +181,17 @@ h6 {
 /* ----------------------------------------------идет пересечение с LIST pizza))  ----------------------------------------------------- */
 /* хз ка это выворачивать */
 .menu {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 13px; */
+  position: relative;
+  top: 82px;
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   gap: 20px;
   align-items: stretch;
   max-width: 1024px;
-  margin: 76px auto 50px;
+  min-width: 775px;
+  padding: 0 12px;
+  margin: 0 auto 50px;
 }
 .menu img {
   border-radius: 5px;
@@ -203,6 +209,11 @@ h6 {
 .menu__item {
   position: relative;
   padding: 13px 0;
+  position: relative;
+  top: 82px;
+  height: fit-content;
+  padding: 0 12px;
+  margin: 0 auto 50px;
 }
 .menu-prod {
   grid-area: menu;
@@ -246,6 +257,7 @@ button {
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 0 12px;
   font-weight: 500;
   font-size: 27px;
@@ -317,3 +329,11 @@ a {
   text-decoration: none;
   color: #000;
 }
+
+/** 
+повтояющие тэги связанные со стилем текста
+p
+span
+
+
+*/

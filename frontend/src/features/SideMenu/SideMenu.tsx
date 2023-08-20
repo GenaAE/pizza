@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, NavLink } from 'react-router-dom';
 import { selectedDish } from '../../store/product/selectors';
 import { RootState } from '../../store/store';
 import styles from './SideMenu.module.scss';
@@ -28,7 +28,9 @@ function MenuProd(): JSX.Element {
     <>
       {/* ПОДУМАТЬ КАК ОРЕНДЕРИТЬ ЧЕРЕЗ УСЛ РЕНДЕР */}
       <div className="menu-prod">
-        <button>MENU</button>
+        <NavLink to="/catalog">
+          <button>MENU</button>
+        </NavLink>
         <div className="menu-prod__items">
           <>
             <div className="menu-prod__item-nav">

@@ -2,10 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { RootState } from '../../store/store';
-
+/**
+ *
+ * @returns возв компонент хедер
+ */
 function Header(): JSX.Element {
-  const check = useSelector((store: RootState) => store.products.check);
-
   return (
     <>
       {/* <div className="desktop"> */}
@@ -14,11 +15,12 @@ function Header(): JSX.Element {
           <div className="desktop-header__left">Меню</div>
         </NavLink>
         <NavLink to="/">
-          <div className="desktop-header__center">ПОТАПЫЧ </div>
+          <div className="desktop-header__center">
+            Сеть Кафе Пиццерий "Потапыч"
+          </div>
         </NavLink>
         <div className="desktop-header__right">
           <p>Ваш заказ</p>
-
           {/*  */}
         </div>
       </div>
