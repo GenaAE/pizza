@@ -5,13 +5,19 @@ import { RootState } from '../../store/store';
 import Header from '../Header/Header';
 import { Product } from './types/ProductType';
 import CatagoryList from '../../utils/CatagoryList';
+
 //
+
+/**
+ * рабочаяя версия
+ * @returns возр список категрий блюд с путем /catalog
+ */
+
 function CatalogHome(): JSX.Element {
   const navigate = useNavigate();
 
   return (
     <>
-      <Header />
       <div className="menu">
         {CatagoryList().map((dish) => (
           <>
@@ -22,6 +28,7 @@ function CatalogHome(): JSX.Element {
                 onClick={() => navigate(`./catalog${dish.path}`)}
               />
               <p>{dish.product_category}</p>
+              {/* <h1>{dish.product_category}</h1> */}
             </div>
           </>
         ))}

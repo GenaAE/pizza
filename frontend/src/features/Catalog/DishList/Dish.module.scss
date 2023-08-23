@@ -1,6 +1,5 @@
 .list {
   display: grid;
-  /* justify-items: center; */
   grid-template-areas:
     'head head head'
     'menu contaner basket';
@@ -27,137 +26,44 @@
   cursor: pointer;
 }
 
-// .list .basket {
-//   grid-area: basket;
-//   position: fixed;
-//   top: 76px;
-//   right: 0;
-//   top: 0;
-//   z-index: 101;
-
-//   height: -webkit-fill-available;
-//   width: 320px;
-
-//   /* align-items: flex-end; */
-//   /* height: 100vh; И КАК ЭТО РАБОТАЕТ??? ВЫСОТА ПО ОБЬЕКТУ СТОЛИ */
-
-//   background-color: #78aa9f;
-// }
 .list__contaner {
+  position: relative;
+  top: 78px;
   grid-area: contaner;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 0 12px;
+  margin: 0 auto 50px;
   /* ----------------------------------------------не удалось margin вставить в границы страницы  ----------------------------------------------------- */
   /* ----------------------------------------------отталкивает menu и basket ----------------------------------------------------- */
-
-  /* margin: 76px 360px 0 240px; */
 }
 .list__title {
-  top: 78px;
+  top: 74px;
   position: fixed;
   display: grid;
-  // grid-template-rows: max-content max-content;
   grid-gap: 10px;
   gap: 10px;
   align-items: baseline;
   width: 100%;
-  // max-width: 780px;
-  margin: 0 0 0 -3px;
+  padding: 30px;
   background-color: white;
   z-index: 100;
 }
 .list__item {
   position: relative;
-  top: 200px;
+  top: 82px;
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   gap: 20px;
   align-items: stretch;
   max-width: 1024px;
   min-width: 775px;
-  padding-left: 15px;
-  margin: 0 auto 50px;
 }
-
-// .element {
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-content: flex-start;
-//   font-size: 17px;
-//   /* width: min-content; */
-//   max-width: 320px;
-
-//   /* aspect-ratio: 351/235; */
-// }
-// .element p {
-//   font-size: 14px;
-//   border-top: solid 0.3px #9ba5ab;
-//   color: #9ba5ab;
-//   opacity: 0.7;
-// }
-// .element img {
-//   border-radius: 5px;
-//   width: 100%;
-
-//   aspect-ratio: 351/235;
-
-//   /* transition: opacity 0.2s ease; */
-// }
-// .img_page {
-//   width: 800px;
-// }
-// .dish {
-//   position: relative;
-//   top: 150px;
-//   left: 300px;
-// }
-// .dish {
-//   left: 29vw;
-//   position: relative;
-//   top: 20vh;
-//   width: 50%;
-// }
-/* img {
-  width: 320px;
-  height: 214px;
-} */
-/* .element__title {
-  display: grid;
-  grid-template-areas: 1fr 3fr;
-} */
-/* ----------------------------------------------------- GRID AREAS ----------------------------------------------------- */
-
-// .element__title {
-//   display: grid;
-//   align-items: center;
-//   grid-template-areas:
-//     'name  price but'
-//     'massa price but';
-//   grid-template-rows: 1fr 1fr;
-//   grid-template-columns: 6fr 2fr 1fr;
-// }
-
-// .element__title > .name {
-//   grid-area: name;
-
-//   /* background-color: #8ca0ff; */
-// }
-
-// .element__title > .massa {
-//   grid-area: massa;
-//   font-size: 13px;
-//   color: #9ba5ab;
-
-//   /* background-color: #ffa08c; */
-// }
-
-// .element__title > .price {
-//   grid-area: price;
-//   /* background-color: #ffff64; */
-// }
-// .element__title > .but {
-//   grid-area: but;
-//   /* background-color: #ffff64; */
-// }
+.list {
+  display: flex;
+  margin: 0px 360px 0 240px;
+}
+//SCSS dish выровнял flex-ом
+//TODO dish проверить стили и удалить гриды
