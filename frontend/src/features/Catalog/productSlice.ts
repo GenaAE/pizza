@@ -65,6 +65,9 @@ const productSlice = createSlice({
 
       state.basketDish.splice(ror, 1);
     },
+    deleteOrder: (state, action) => {
+      state.basketDish = [];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -77,6 +80,12 @@ const productSlice = createSlice({
   },
 });
 
-export const { plusDish, minusDish, minusBasketSumm, orderSum, plusDishHead } =
-  productSlice.actions;
+export const {
+  plusDish,
+  minusDish,
+  minusBasketSumm,
+  orderSum,
+  plusDishHead,
+  deleteOrder,
+} = productSlice.actions;
 export default productSlice.reducer;

@@ -27,6 +27,8 @@
 }
 
 .list__contaner {
+  position: relative;
+  top: 78px;
   grid-area: contaner;
   height: 100vh;
   display: flex;
@@ -61,7 +63,7 @@
 }
 .list {
   display: flex;
-  margin: 76px 360px 0 240px;
+  margin: 0px 360px 0 240px;
 }
 //SCSS dish выровнял flex-ом
 //TODO dish проверить стили и удалить гриды

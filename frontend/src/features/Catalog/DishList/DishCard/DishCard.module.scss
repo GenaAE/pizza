@@ -74,8 +74,7 @@
   // background-color: #9ba5ab7d;
   position: relative;
 }
-.element span {
-}
+
 .product_composition {
   display: -webkit-box;
 
@@ -95,13 +94,17 @@
   top: 20px;
   right: 20px;
   display: flex;
-  background: #f8f9f9;
+  background: #686868;
   border-radius: 4px;
-  width: 40px;
+  width: 50px;
   height: 30px;
   justify-content: space-between;
   align-items: center;
 }
 .cartBadge span {
-  padding-left: 8px;
+  padding: 0 5px;
+  color: white;
+}
+svg {
+  padding: 6px 0 0 4px;
 }

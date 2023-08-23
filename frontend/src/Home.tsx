@@ -7,13 +7,16 @@ import Carusel from './Carusel';
 function Home(): JSX.Element {
   return (
     <>
-      <Header />
+      <div className="home">
+        <Header />
 
-      <CatalogHome />
-      <Carusel />
+        <Carusel />
 
-      <div>Home</div>
-      <h1>Сюда основное</h1>
+        <CatalogHome />
+
+        <div>Home</div>
+        <h1>Сюда основное</h1>
+      </div>
     </>
   );
 }

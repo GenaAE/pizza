@@ -5,6 +5,7 @@ import { RootState } from '../../store/store';
 import Header from '../Header/Header';
 import { Product } from './types/ProductType';
 import CatagoryList from '../../utils/CatagoryList';
+
 //
 
 /**
@@ -17,7 +18,6 @@ function CatalogHome(): JSX.Element {
 
   return (
     <>
-      <Header />
       <div className="menu">
         {CatagoryList().map((dish) => (
           <>

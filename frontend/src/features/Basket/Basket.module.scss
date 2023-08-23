@@ -1,17 +1,17 @@
 .basket {
-  grid-area: basket;
   position: fixed;
   top: 76px;
   right: 0;
   top: 0;
-  z-index: 101;
+  width: 360px;
+  grid-area: basket;
   height: -webkit-fill-available;
+  z-index: 1001;
   background-color: #ebedef;
 
   border-left: 1px solid hsl(0deg 0.2% 17.43% / 18%);
 
   font-size: 13px;
-  width: 360px;
 }
 .basketHeader {
   height: 76px;

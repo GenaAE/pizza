@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectedDish } from '../../store/product/selectors';
 import { useAppDispatch } from '../../store/store';
-import { minusDish, plusDish } from '../Catalog/productSlice';
+import { deleteOrder, minusDish, plusDish } from '../Catalog/productSlice';
 import styles from './Basket.module.scss';
 import sort from '../../utils/sort';
 import { NavLink } from 'react-router-dom';
@@ -30,7 +30,7 @@ function BasketList(): JSX.Element {
   //СДЕЛАТЬ РАЗДЕЛЕНИЕ
   // svg сдeлать ссылку на public!
   // DONE // СДЕЛАТЬ ПУЧТУЮ КОРЗИНУ = ТИПА ЗАКАЗОВ НЕТ((
-  console.log(countOfDishId);
+
   return (
     <>
       <br />
@@ -39,6 +39,11 @@ function BasketList(): JSX.Element {
           <>
             <div className={styles.basketHeader}>
               <span>Ваш заказ</span>
+              ДОБИТЬ
+              {/* svg сделать как компонет и на него сделать клик */}
+              <button onClick={() => dispatch(deleteOrder([]))}>
+                DELETE ALL
+              </button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 data-name="Layer 2"
@@ -70,8 +75,12 @@ function BasketList(): JSX.Element {
                 ></text>
               </svg>
             </div>
+
+            {/* </div> */}
             <div className={styles.scroll}>
               {unsortUniqArrOfDishes.map((basDish) => (
+                // FIXME всё сложить сюда = svg и тд
+                // а ничё шо будет дубляж
                 <>
                   <div key={basDish.id} className={styles.order}>
                     {/* <div key={basDish.id}> */}

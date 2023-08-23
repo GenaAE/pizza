@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+
 import { RootState } from '../../../store/store';
 import Header from '../../Header/Header';
 import styles from './Dish.module.scss';
@@ -9,9 +10,11 @@ import { useParams } from 'react-router-dom';
 import DishCard from './DishCard/DishCard';
 import Footer from '../../Footer/Footer';
 import BasketList from '../../Basket/BasketList';
+import { useEffect } from 'react';
 /**
- *
- * @param dishList массив всех имеющихся блюд
+ * @var
+ * @var dishCategory  выбранная категория блюд
+ * @var dishList массив имеющихся блюд выбранной категории блюд
  * @returns возв комп-т Выбранной Категории Блюд и карт-ки блюд
  */
 function CatalogListSections(): JSX.Element {
@@ -20,21 +23,26 @@ function CatalogListSections(): JSX.Element {
 
   // ------------------------------ фильтр для отрисовки только одно КАТЕГОРИИ БЛЮД  // ------------------------------
   const params = useParams();
+  // категория
+  const dishCategory = products.find((el) => el.path === `/${params.path}`);
+  // массив блюд выбранной категории
   const dishList = products.filter((el) => el.path === `/${params.path}`);
 
   return (
     <>
+      <Header />
+      <MenuProd />
       <div className={styles.list}>
-        <Header />
-        <MenuProd />
-
         <div className={styles.list__contaner}>
+          <div className={styles.list__title}>
+            {/* // ДЛП ДОБИТЬ категории
+              - ситуация = если перезагр стр, а категория не выбрана, то ошибку выдает
+              --- беру категорию из списка категорий блюд из массива --- 
+              на 21/08 сдела след образом // думаю можно тернаркой бахнуть если нет то ВЫБЕРИТЕ КАТЕГОРИЮ */}
+            <p>{dishCategory?.product_category}</p>
+          </div>
           <div className={styles.list__item}>
-            <div className={styles.list__title}>
-              {/* <p>{dishList[0].product_category}</p> */}
-              <p>{dishList[0].product_category}</p>
-            </div>
-            {dishList.map((p) => (
+            {dishList?.map((p) => (
               <DishCard key={p.id} p={p} />
             ))}
           </div>

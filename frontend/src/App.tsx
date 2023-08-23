@@ -12,7 +12,7 @@ import AdminWork from './features/Admin/AdminWork';
 import { getProductsAdmin } from './features/Admin/adminSlice';
 import PelmeniList from './features/Catalog/Pelmeni/PelmeniList';
 import { getPelmeni } from './features/Catalog/Pelmeni/pelmeniSlice';
-import CatalogDish from './features/Catalog/CatalogDishes/CatalogDishes';
+import CatalogDishes from './features/Catalog/CatalogDishes/CatalogDishes';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -30,7 +30,7 @@ function App(): JSX.Element {
           <Route path="/pelmeni" element={<PelmeniList />} />
 
           <Route path="/admin" element={<AdminWork />} />
-          <Route path="/catalog/" element={<CatalogDish />} />
+          <Route path="/catalog/" element={<CatalogDishes />} />
           <Route path="/catalog/:path" element={<DishList />} />
           <Route path="/catalog/:path/:id" element={<DishPage />} />
         </Route>

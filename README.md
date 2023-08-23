@@ -7,10 +7,18 @@
 
 2.  WARN
 
+- главная стр категории плашки
+- карусель
+-
+
 - навигация выполнена на useNavigate
   = как сделать на NavLink без потерь = что лучше использовать
   ПРИБЛУДЫ:
   чтобы вписывать названия продуктов вместо id в параметры
+  WARN errorBoundary
+  import { ErrorBoundary } from 'react-error-boundary';
+
+  <ErrorBoundary fallback={<div>Something went wrong</div>}>
 
 SCSS
 Позиционирование
