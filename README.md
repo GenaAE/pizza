@@ -9,6 +9,7 @@
 
 - авторизацию
 - отправка заказа на базу
+- ESLINT_NO_DEV_ERRORS=true
 
 2.  WARN
 
