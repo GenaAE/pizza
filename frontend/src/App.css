@@ -77,35 +77,10 @@ h6 {
 
 /* ----------------------------------ОБНУЛЕНИЕ СТИЛЕЙ ---------------------------------- */
 
-/* .App-header {
-  background-color: #a7c8b494;
-  font-size: calc(10px + 2vmin);
-  align-items: center;
-  display: grid;
-}
-.App-header div {
-  padding: 15px;
-}
-.nav {
-  cursor: pointer;
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr;
-  justify-content: space-evenly;
-  align-items: center;
-  /* position: absolute;
-  z-index: 1; 
-}
-.nav > div {
-  padding: 2vw;
-} */
-/* ----------------------------------------------Сделать переменные с р-р текста и цветами ---------------------------------- */
-
 .App-body {
   position: relative;
   top: 76px;
   min-height: 60vh;
-  /* font-size: calc(10px + 2vmin); */
-
   font-size: 34px;
 }
 
@@ -317,3 +292,7 @@ span
 
 
 */
+.icon {
+  cursor: pointer;
+  margin: 15px;
+}

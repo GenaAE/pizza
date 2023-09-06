@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 import DishCard from './DishCard/DishCard';
 import Footer from '../../Footer/Footer';
 import BasketList from '../../Basket/BasketList';
-import { useEffect } from 'react';
+
 /**
  * @var
  * @var dishCategory  выбранная категория блюд
