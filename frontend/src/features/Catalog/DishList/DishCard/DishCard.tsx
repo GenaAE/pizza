@@ -31,17 +31,20 @@ function DishCard({ p }: { p: Product }): JSX.Element {
   return (
     <>
       <div className={styles.element}>
+        {/* <a href={`/catalog${p.path}/${p.id}`}> */}
         <img
           className={styles.img}
           src={p.image}
           alt="product"
-          onClick={() => navigate(`${p.id}`)}
+          onClick={() => navigate(`/catalog${p.path}/${p.id}`)}
         />
+        {/* </a> */}
 
         {NumOfSelectedDishes[p.id] && (
           <div className={styles.cartBadge}>
             {/* // сравнение по id для опред кто выбран */}
             <>
+              <img src="icons/" alt="" />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 data-name="Layer 2"

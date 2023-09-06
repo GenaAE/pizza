@@ -1,0 +1,6 @@
+<svg width="824.7125px" height="137.59996337890624px" xmlns="http://www.w3.org/2000/svg" viewBox="-162.35625 6.200018310546881 824.7125 137.59996337890624" style="background: rgba(0, 0, 0, 0);" preserveAspectRatio="xMidYMid"><defs><filter id="editing-jagged" x="-100%" y="-100%" width="300%" height="300%"><feTurbulence result="turb" baseFrequency="0.11" numOctaves="1" seed="1"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="turb" scale="12"></feDisplacementMap></filter></defs><g filter="url(#editing-jagged)"><g transform="translate(249.9999885559082, 75)"><path d="" fill="#444"></path></g></g><style>text {
+  font-size: 64px;
+  font-family: Arial Black;
+  dominant-baseline: central;
+  text-anchor: middle;
+}</style></svg>

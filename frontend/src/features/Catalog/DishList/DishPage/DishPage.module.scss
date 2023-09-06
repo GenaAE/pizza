@@ -32,16 +32,19 @@
 }
 
 .page {
-  left: 29vw;
-  position: relative;
-  top: 20vh;
-  width: 50%;
+  width: 1024px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 77px auto 20px;
 }
 .element {
   background-color: rgb(186, 177, 177);
 }
 .img {
   width: 100%;
+  object-fit: cover;
 }
 .but {
   right: -30px;

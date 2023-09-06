@@ -1,4 +1,3 @@
-import React from 'react';
 import { Product } from '../features/Catalog/types/ProductType';
 
 // -------------------------------- ф-я для сортировки )) ----------------------------------------//

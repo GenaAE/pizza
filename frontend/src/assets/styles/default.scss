@@ -23,3 +23,9 @@ body {
 // }
 // @media (prefers-color-scheme: dark) { // background-color: $color1; // color: $color5; // } // @media (prefers-color-scheme: light) { // background-color: $color5; // color: #333; // } // } // h1 { // font-family: a_futuraround; // font-weight: 700; // } // .button { // background: none; // border: 1px solid $color2; // color: $color2; // cursor: pointer; // transition: 300ms; // &:hover,
 // &.active { // background: $color2; // color: $color5; // };
+
+// SCSS icon общие
+.icon {
+  cursor: pointer;
+  margin: 15px;
+}
