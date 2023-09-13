@@ -50,7 +50,7 @@ function Header(): JSX.Element {
         </NavLink>
         <NavLink to="/">
           <div className={styles.header__center}>
-            Сеть Кафе Пиццерий "Потапыч"
+            Сеть Кафе Пиццерий "Pizza"
           </div>
         </NavLink>
         <div className={styles.header__right}>
