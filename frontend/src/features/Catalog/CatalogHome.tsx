@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
 import { useNavigate, useParams } from 'react-router-dom';
-import { RootState } from '../../store/store';
-import Header from '../Header/Header';
-import { Product } from './types/ProductType';
 import CatagoryList from '../../utils/CatagoryList';
 
 //

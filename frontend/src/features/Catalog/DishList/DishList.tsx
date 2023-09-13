@@ -35,10 +35,6 @@ function CatalogListSections(): JSX.Element {
       <div className={styles.list}>
         <div className={styles.list__contaner}>
           <div className={styles.list__title}>
-            {/* // ДЛП ДОБИТЬ категории
-              - ситуация = если перезагр стр, а категория не выбрана, то ошибку выдает
-              --- беру категорию из списка категорий блюд из массива --- 
-              на 21/08 сдела след образом // думаю можно тернаркой бахнуть если нет то ВЫБЕРИТЕ КАТЕГОРИЮ */}
             <p>{dishCategory?.product_category}</p>
           </div>
           <div className={styles.list__item}>

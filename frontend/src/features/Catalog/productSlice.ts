@@ -43,16 +43,8 @@ const productSlice = createSlice({
     },
     // если сделать добавление в масс через ОРДЕР и нажатие + - именно DISH целиком
     orderSum: (state, action) => {
-      // state.check = state.basketDish
-      //   .map((el) => el.price)
-      //   .reduce((acc, el) => acc + el, 0);
-
       state.check = state.check + action.payload.price;
-
-      // let ror = selectDish?.map((el) => el.price)?.reduce((acc, el) => acc + el, 0);
-      // console.log(ror);
     },
-    //убавляю сумму - блюдо надо изменить кол-во в массиве
     minusBasketSumm: (state, action) => {
       state.check = +state.check - action.payload;
     },
